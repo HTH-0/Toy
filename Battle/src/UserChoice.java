@@ -1,4 +1,3 @@
-
 public enum UserChoice {
 	BATTLE,
 	REST,

@@ -11,6 +11,9 @@ public class Battle {
 		case MAGIC:
 			magic();
 			break;
+		case BACK:
+			back();
+			break;
 		}
 	}
 	public void attacked(Enemy enemy, Player player) {
@@ -26,8 +29,12 @@ public class Battle {
 	
 	private void enemyAttack(Enemy enemy, Player player) {
 		int enemyDamage = enemy.getPower() - player.getNewDefense();
+		if(enemyDamage > 0) {			
 		player.setHp(player.getHp() - enemyDamage);
 		System.out.printf("\n%s에게 %d의 피해를 입었습니다!\n 나의 체력 %d", enemy.getName(), enemyDamage, player.getHp());
+		}else {
+			System.out.println("\n공격을 전부 막아냈습니다");
+		}
 	}
 	
 	private void defend(Player player) {
@@ -37,6 +44,9 @@ public class Battle {
 	}
 	private void magic() {
 		System.out.println("아직 마법 기능은 구현되지 않았습니다.");
+	}
+	private void back() {
+		
 	}
 }
 

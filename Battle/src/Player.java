@@ -1,6 +1,7 @@
 
 public class Player {
 	// 스탯
+	private int username;
 	private int hp;
 	private int mana;
 	private final int defense;
@@ -19,6 +20,9 @@ public class Player {
 	}
 
 	// Getter Setter
+	public int getUsername() {
+		return username;
+	}
 	public int getHp() {
 		return hp;
 	}
