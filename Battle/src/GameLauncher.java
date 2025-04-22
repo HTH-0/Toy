@@ -1,10 +1,11 @@
 import java.util.Scanner;
 
-public class Test {
+public class GameLauncher {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-
+		Player player = new Player(100, 30, 10, 20);
+		
 		System.out.println("==== 메인 메뉴 ====");
 		System.out.print("1.Solo  2.Online  3.Exit >> ");
 		int Mchoice = sc.nextInt();
@@ -18,6 +19,8 @@ public class Test {
 			default -> MainChoice.SOLO;
 		};
 
-		new MainMenu(mainchoice);
+		new MainMenu(mainchoice, player);
+		
+		sc.close();
 	}
 }

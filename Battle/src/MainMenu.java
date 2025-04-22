@@ -1,8 +1,10 @@
 
 public class MainMenu {
 	
-	
-	public MainMenu(MainChoice choice) {
+	private Player player;
+
+	public MainMenu(MainChoice choice, Player player) {
+		this.player = player;
 		select(choice);
 	}
 	
@@ -16,14 +18,14 @@ public class MainMenu {
 		}
 	}
 	private void solo() {
-		new SoloGame().start();
+		new SoloGame(player).start();
 	}
 	
 	private void online() {
 		System.out.println("아직 미구현");
 	}
 	
-	private void save(Player player) {
+	private void save() {
 		SaveFile.SavePlayer(player);
 	}
 	

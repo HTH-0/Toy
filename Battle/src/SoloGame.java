@@ -1,9 +1,16 @@
 import java.util.Scanner;
 
 public class SoloGame {
+	private Player player;
+
+	public SoloGame(Player player) {
+		this.player = player;
+	}
+
 	public void start() {
+
 		Scanner sc = new Scanner(System.in);
-		Player player = new Player(100, 30, 10, 20);
+
 		StageInit stageInit = new StageInit();
 		Battle battle = new Battle();
 
@@ -24,10 +31,10 @@ public class SoloGame {
 					System.out.print("행동을 선택하세요 (1.공격 2.방어 3.마법) >> ");
 					int Bchoice = sc.nextInt();
 					BattleChoice battleChoice = switch (Bchoice) {
-						case 1 -> BattleChoice.ATTACK;
-						case 2 -> BattleChoice.DEFEND;
-						case 3 -> BattleChoice.MAGIC;
-						default -> BattleChoice.ATTACK;
+					case 1 -> BattleChoice.ATTACK;
+					case 2 -> BattleChoice.DEFEND;
+					case 3 -> BattleChoice.MAGIC;
+					default -> BattleChoice.ATTACK;
 					};
 
 					battle.battle(player, enemy, battleChoice);
